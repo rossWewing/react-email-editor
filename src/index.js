@@ -63,6 +63,15 @@ export default class extends Component {
       },
     });
 
+    unlayer.setBodyValues({
+      backgroundColor: '#fff',
+      contentWidth: displayMode === 'email' ? '500px' : '100%',
+      fontFamily: {
+        label: 'Helvetica',
+        value: '\'Helvetica Neue\', Helvetica, Arial, sans-serif',
+      }
+    })
+
     // All properties starting with on[Name] are registered as event listeners.
     for (const [key, value] of Object.entries(this.props)) {
       if (/^on/.test(key) && key !== 'onLoad' && key !== 'onReady') {
